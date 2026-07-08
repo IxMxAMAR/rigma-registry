@@ -1,0 +1,13 @@
+﻿{
+    "combo":  "qwen3.6-35b-a3b UD-Q3_K_XL",
+    "date":  "2026-07-08",
+    "llamacpp":  "b9867",
+    "os":  "windows",
+    "measured":  {
+                     "pp_tps":  189.3131062535597,
+                     "tg_tps":  26.280642356388096,
+                     "prompt_tokens":  2048,
+                     "gen_tokens":  128
+                 },
+    "notes":  "measured under severe RAM pressure (0.3GB free of 15.4GB total; offloaded experts paging). Healthy-machine baseline for this combo: 57.1 tg / 689 pp t/s (2026-07-06)."
+}
