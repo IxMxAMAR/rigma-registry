@@ -1,0 +1,9 @@
+{
+  "model": "qwen3.6-35b-a3b", "quant": "UD-Q3_K_XL", "backend": "vulkan",
+  "flags": {"ctx": 32768, "ngl": 99, "n_cpu_moe": 8, "flash_attn": true,
+            "cache_type_k": "q8_0", "cache_type_v": "q8_0"},
+  "notes": "provisional: research-seeded 2026-07-07, not yet benchmarked. RDNA3: Vulkan is the practical Windows backend; on Linux, ROCm/HIP is typically 10-20% faster (unlike RDNA4 where Vulkan wins) - future OS-specific combos may split this. n_cpu_moe 8 (vs 10 on the 16GB-RAM 9070 XT combo) since 32GB RAM allows keeping context headroom. Directory slug may need renaming to match driver-reported name.",
+  "sources": ["https://www.llmsfit.com/news/how-to-run-llm-on-amd-gpu",
+              "https://github.com/ggml-org/llama.cpp/issues/20934",
+              "https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF"]
+}

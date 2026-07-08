@@ -1,0 +1,7 @@
+{
+  "model": "qwen3.6-35b-a3b", "quant": "UD-Q3_K_XL", "backend": "vulkan",
+  "flags": {"ctx": 16384, "ngl": 99, "n_cpu_moe": 34, "flash_attn": true,
+            "cache_type_k": "q8_0", "cache_type_v": "q8_0"},
+  "notes": "provisional class fallback for unknown 12GB cards with 32GB RAM (conservative offload, vulkan as vendor-neutral backend); unverified.",
+  "sources": ["https://knightli.com/en/2026/05/26/rtx-3060-llama-cpp-n-cpu-moe-local-35b/"]
+}

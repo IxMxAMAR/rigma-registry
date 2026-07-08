@@ -1,0 +1,8 @@
+{
+  "model": "qwen3.6-35b-a3b", "quant": "UD-Q4_K_XL", "backend": "cuda",
+  "flags": {"ctx": 65536, "ngl": 99, "n_cpu_moe": 0, "flash_attn": true,
+            "cache_type_k": "q8_0", "cache_type_v": "q8_0"},
+  "notes": "provisional: research-seeded 2026-07-07, not yet benchmarked. Q4_K_XL (21.3 GiB) fits fully in 24GB with 64K ctx (KV ~680MB at q8_0 thanks to hybrid attention); no expert offload needed. Directory slug may need renaming to match driver-reported name.",
+  "sources": ["https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF",
+              "https://qwen.ai/blog?id=qwen3.6-35b-a3b"]
+}

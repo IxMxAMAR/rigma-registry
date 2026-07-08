@@ -1,0 +1,8 @@
+{
+  "model": "qwen3.6-35b-a3b", "quant": "UD-Q2_K_XL", "backend": "cuda",
+  "flags": {"ctx": 16384, "ngl": 99, "n_cpu_moe": 24, "flash_attn": true,
+            "cache_type_k": "q8_0", "cache_type_v": "q8_0"},
+  "notes": "provisional: research-seeded 2026-07-07, not yet benchmarked. Q2_K_XL trades quality for fit (8GB VRAM + 16GB RAM cannot hold Q3's expert overflow); Unsloth dynamic Q2 holds up on MoE but expect visible degradation on hard coding tasks. Offloaded experts ~6GB RAM. Directory slug may need renaming to match driver-reported name.",
+  "sources": ["https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF",
+              "https://mychen76.medium.com/run-qwen3-6-35b-a3b-on-6gb-vram-using-llama-cpp-30-tps-a89032e5a60c"]
+}

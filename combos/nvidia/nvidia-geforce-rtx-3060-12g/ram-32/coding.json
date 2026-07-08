@@ -1,0 +1,8 @@
+{
+  "model": "qwen3.6-35b-a3b", "quant": "UD-Q3_K_XL", "backend": "cuda",
+  "flags": {"ctx": 32768, "ngl": 99, "n_cpu_moe": 32, "flash_attn": true,
+            "cache_type_k": "q8_0", "cache_type_v": "q8_0"},
+  "notes": "provisional: research-seeded 2026-07-07, not yet benchmarked. n_cpu_moe 32 from published RTX 3060 guide (fit calculator suggests 19; bench calibration will tighten). Directory slug may need renaming to match driver-reported name.",
+  "sources": ["https://knightli.com/en/2026/05/26/rtx-3060-llama-cpp-n-cpu-moe-local-35b/",
+              "https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF"]
+}

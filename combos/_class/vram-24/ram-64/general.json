@@ -1,0 +1,7 @@
+{
+  "model": "qwen3.6-35b-a3b", "quant": "UD-Q4_K_XL", "backend": "vulkan",
+  "flags": {"ctx": 32768, "ngl": 99, "n_cpu_moe": 2, "flash_attn": true,
+            "cache_type_k": "q8_0", "cache_type_v": "q8_0"},
+  "notes": "provisional class fallback for unknown 24GB cards with 64GB RAM (slight offload margin for unknown display overhead, vulkan as vendor-neutral backend); unverified.",
+  "sources": ["https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF"]
+}
