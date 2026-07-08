@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["model", "quant", "backend", "flags"],
+  "properties": {
+    "model": {"type": "string", "minLength": 1},
+    "quant": {"type": "string", "minLength": 1},
+    "backend": {"enum": ["vulkan", "cuda", "rocm", "metal", "cpu"]},
+    "flags": {
+      "type": "object",
+      "required": ["ctx"],
+      "properties": {
+        "ctx": {"type": "integer", "minimum": 1024},
+        "ngl": {"type": "integer", "minimum": 0},
+        "n_cpu_moe": {"type": "integer", "minimum": 0},
+        "flash_attn": {"type": "boolean"},
+        "cache_type_k": {"enum": ["f16", "q8_0", "q4_0"]},
+        "cache_type_v": {"enum": ["f16", "q8_0", "q4_0"]}
+      },
+      "additionalProperties": false
+    },
+    "budget": {"type": "object"},
+    "expected": {"type": "object"},
+    "verified": {
+      "type": "object",
+      "required": ["by", "date"],
+      "properties": {"by": {"type": "string"}, "date": {"type": "string", "format": "date"}}
+    },
+    "notes": {"type": "string"},
+    "sources": {"type": "array", "items": {"type": "string", "format": "uri"}, "minItems": 1}
+  },
+  "additionalProperties": false
+}
