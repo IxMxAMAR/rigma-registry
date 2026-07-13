@@ -1,0 +1,7 @@
+{
+  "model": "cydonia-24b-v4.3", "quant": "Q4_K_M", "backend": "vulkan",
+  "flags": {"ctx": 4096, "ngl": 99, "n_cpu_moe": 0, "flash_attn": true,
+            "cache_type_k": "q8_0", "cache_type_v": "q8_0"},
+  "notes": "provisional: research-seeded 2026-07-12. Purpose-tuned creative model (Mistral Small 3 base) fully GPU-resident: 13.4 GiB weights + ~350MB KV at 4K ctx fits 16GB VRAM with zero system-RAM dependence (dense model - immune to RAM pressure). ctx capped at 4096 for VRAM fit; enough for prompt-writing workflows. Roomier alternative: rocinante-x-12b Q6_K at 16K ctx.",
+  "sources": ["https://huggingface.co/TheDrummer/Cydonia-24B-v4.3-GGUF"]
+}
