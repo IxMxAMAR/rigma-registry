@@ -19,6 +19,8 @@ def main() -> int:
                for f in sorted((ROOT / "models").glob("*.json"))]
     checks += [(f, load(ROOT / "schema/combo.schema.json"))
                for f in sorted((ROOT / "combos").rglob("*.json"))]
+    checks += [(f, load(ROOT / "schema/use_case.schema.json"))
+               for f in sorted((ROOT / "use_cases").glob("*.json"))]
     model_slugs = {load(f)["slug"] for f in (ROOT / "models").glob("*.json")}
     for path, schema in checks:
         data = load(path)
