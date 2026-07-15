@@ -1,0 +1,7 @@
+{
+  "model": "rocinante-x-12b", "quant": "Q6_K", "backend": "vulkan",
+  "flags": {"ctx": 16384, "ngl": 99, "n_cpu_moe": 0, "flash_attn": true,
+            "cache_type_k": "q8_0", "cache_type_v": "q8_0"},
+  "notes": "provisional: seeded 2026-07-14 for the 32GB-RAM tier. Uncensored creative primary: 9.4GB dense fully GPU-resident with 16K ctx - roomy AND fast, immune to RAM pressure. Quality-first alternative: cydonia-24b-v4.3 Q4_K_M, but its 13.4GB weights cap ctx at 4096 on 16GB VRAM (8K overflows into shared memory and decode collapses to ~4 t/s - observed live 2026-07-14).",
+  "sources": ["https://huggingface.co/TheDrummer/Rocinante-X-12B-v1-GGUF"]
+}

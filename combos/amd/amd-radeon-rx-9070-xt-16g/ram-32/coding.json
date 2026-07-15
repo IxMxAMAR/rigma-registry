@@ -1,0 +1,7 @@
+{
+  "model": "qwen3.6-35b-a3b", "quant": "UD-Q3_K_XL", "backend": "vulkan",
+  "flags": {"ctx": 32768, "ngl": 99, "n_cpu_moe": 10, "flash_attn": true,
+            "cache_type_k": "q8_0", "cache_type_v": "q8_0"},
+  "notes": "provisional: seeded 2026-07-14 from the verified ram-16 coding combo (32K ctx, more experts on CPU - the 32GB tier carries the spill comfortably). Re-verify with `rigma bench`.",
+  "sources": ["https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF"]
+}
