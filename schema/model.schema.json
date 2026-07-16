@@ -162,6 +162,13 @@
   },
   "notes": {
    "type": "string"
+  },
+  "default_params": {
+   "type": "object",
+   "description": "Model-card recommended sampling; weakest layer (session > preset > these)",
+   "additionalProperties": {
+    "type": "number"
+   }
   }
  },
  "additionalProperties": false

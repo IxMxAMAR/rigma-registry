@@ -1,18 +1,48 @@
 {
-  "slug": "cydonia-24b-v4.3", "family": "mistral-small-3", "kind": "dense",
-  "n_layers": 40, "full_attn_layers": 40, "kv_heads": 8, "head_dim": 128,
-  "native_ctx": 32768,
-  "cache_type_policy": {"k": "q8_0", "v": "q8_0",
-    "reason": "dense GQA; q8_0 halves KV with negligible quality loss"},
-  "ggufs": [
-    {"repo": "TheDrummer/Cydonia-24B-v4.3-GGUF", "file": "Cydonia-24B-v4zg-Q6_K.gguf",
-     "bytes": 19345939584, "quant": "Q6_K"},
-    {"repo": "TheDrummer/Cydonia-24B-v4.3-GGUF", "file": "Cydonia-24B-v4zg-Q5_K_M.gguf",
-     "bytes": 16763985024, "quant": "Q5_K_M"},
-    {"repo": "TheDrummer/Cydonia-24B-v4.3-GGUF", "file": "Cydonia-24B-v4zg-Q4_K_M.gguf",
-     "bytes": 14333910144, "quant": "Q4_K_M"}
-  ],
-  "license": "apache-2.0", "use_cases": ["creative"],
-  "sources": ["https://huggingface.co/TheDrummer/Cydonia-24B-v4.3",
-              "https://huggingface.co/TheDrummer/Cydonia-24B-v4.3-GGUF"]
+ "slug": "cydonia-24b-v4.3",
+ "family": "mistral-small-3",
+ "kind": "dense",
+ "n_layers": 40,
+ "full_attn_layers": 40,
+ "kv_heads": 8,
+ "head_dim": 128,
+ "native_ctx": 32768,
+ "cache_type_policy": {
+  "k": "q8_0",
+  "v": "q8_0",
+  "reason": "dense GQA; q8_0 halves KV with negligible quality loss"
+ },
+ "ggufs": [
+  {
+   "repo": "TheDrummer/Cydonia-24B-v4.3-GGUF",
+   "file": "Cydonia-24B-v4zg-Q6_K.gguf",
+   "bytes": 19345939584,
+   "quant": "Q6_K"
+  },
+  {
+   "repo": "TheDrummer/Cydonia-24B-v4.3-GGUF",
+   "file": "Cydonia-24B-v4zg-Q5_K_M.gguf",
+   "bytes": 16763985024,
+   "quant": "Q5_K_M"
+  },
+  {
+   "repo": "TheDrummer/Cydonia-24B-v4.3-GGUF",
+   "file": "Cydonia-24B-v4zg-Q4_K_M.gguf",
+   "bytes": 14333910144,
+   "quant": "Q4_K_M"
+  }
+ ],
+ "license": "apache-2.0",
+ "use_cases": [
+  "creative"
+ ],
+ "sources": [
+  "https://huggingface.co/TheDrummer/Cydonia-24B-v4.3",
+  "https://huggingface.co/TheDrummer/Cydonia-24B-v4.3-GGUF"
+ ],
+ "default_params": {
+  "temperature": 1.0,
+  "min_p": 0.1,
+  "dry_multiplier": 0.8
+ }
 }
