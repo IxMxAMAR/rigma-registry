@@ -1,45 +1,168 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "type": "object",
-  "required": ["slug", "family", "kind", "n_layers", "full_attn_layers",
-               "kv_heads", "head_dim", "native_ctx", "ggufs"],
-  "properties": {
-    "slug": {"type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$"},
-    "family": {"type": "string"},
-    "kind": {"enum": ["dense", "moe"]},
-    "n_layers": {"type": "integer", "minimum": 1},
-    "full_attn_layers": {"type": "integer", "minimum": 1},
-    "kv_heads": {"type": "integer", "minimum": 1},
-    "head_dim": {"type": "integer", "minimum": 1},
-    "native_ctx": {"type": "integer", "minimum": 1024},
-    "moe": {
-      "type": "object",
-      "required": ["total_b", "active_b", "expert_weight_fraction"],
-      "properties": {
-        "total_b": {"type": "number"},
-        "active_b": {"type": "number"},
-        "expert_weight_fraction": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1}
-      }
-    },
-    "cache_type_policy": {"type": "object"},
-    "ggufs": {
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "required": ["repo", "file", "bytes", "quant"],
-        "properties": {
-          "repo": {"type": "string"},
-          "file": {"type": "string"},
-          "bytes": {"type": "integer", "minimum": 1000000},
-          "quant": {"type": "string"},
-          "sha256": {"type": ["string", "null"]}
-        }
-      }
-    },
-    "license": {"type": "string"},
-    "use_cases": {"type": "array", "items": {"type": "string"}},
-    "sources": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "type": "object",
+ "required": [
+  "slug",
+  "family",
+  "kind",
+  "n_layers",
+  "full_attn_layers",
+  "kv_heads",
+  "head_dim",
+  "native_ctx",
+  "ggufs"
+ ],
+ "properties": {
+  "slug": {
+   "type": "string",
+   "pattern": "^[a-z0-9][a-z0-9.-]*$"
   },
-  "additionalProperties": false
+  "family": {
+   "type": "string"
+  },
+  "kind": {
+   "enum": [
+    "dense",
+    "moe"
+   ]
+  },
+  "n_layers": {
+   "type": "integer",
+   "minimum": 1
+  },
+  "full_attn_layers": {
+   "type": "integer",
+   "minimum": 1
+  },
+  "kv_heads": {
+   "type": "integer",
+   "minimum": 1
+  },
+  "head_dim": {
+   "type": "integer",
+   "minimum": 1
+  },
+  "native_ctx": {
+   "type": "integer",
+   "minimum": 1024
+  },
+  "moe": {
+   "type": "object",
+   "required": [
+    "total_b",
+    "active_b",
+    "expert_weight_fraction"
+   ],
+   "properties": {
+    "total_b": {
+     "type": "number"
+    },
+    "active_b": {
+     "type": "number"
+    },
+    "expert_weight_fraction": {
+     "type": "number",
+     "exclusiveMinimum": 0,
+     "exclusiveMaximum": 1
+    }
+   }
+  },
+  "cache_type_policy": {
+   "type": "object"
+  },
+  "ggufs": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "required": [
+     "repo",
+     "file",
+     "bytes",
+     "quant"
+    ],
+    "properties": {
+     "repo": {
+      "type": "string"
+     },
+     "file": {
+      "type": "string"
+     },
+     "bytes": {
+      "type": "integer",
+      "minimum": 1000000
+     },
+     "quant": {
+      "type": "string"
+     },
+     "sha256": {
+      "type": [
+       "string",
+       "null"
+      ]
+     }
+    }
+   }
+  },
+  "license": {
+   "type": "string"
+  },
+  "use_cases": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "sources": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "minItems": 1
+  },
+  "capabilities": {
+   "type": "array",
+   "items": {
+    "enum": [
+     "tools",
+     "vision",
+     "thinking"
+    ]
+   }
+  },
+  "mmproj": {
+   "type": "object",
+   "required": [
+    "repo",
+    "file",
+    "bytes",
+    "quant"
+   ],
+   "properties": {
+    "repo": {
+     "type": "string"
+    },
+    "file": {
+     "type": "string"
+    },
+    "bytes": {
+     "type": "integer",
+     "minimum": 1000000
+    },
+    "quant": {
+     "type": "string"
+    },
+    "sha256": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   }
+  },
+  "notes": {
+   "type": "string"
+  }
+ },
+ "additionalProperties": false
 }

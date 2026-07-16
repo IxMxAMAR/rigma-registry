@@ -1,7 +1,18 @@
 {
-  "model": "qwen3.6-35b-a3b", "quant": "UD-Q3_K_XL", "backend": "vulkan",
-  "flags": {"ctx": 16384, "ngl": 99, "n_cpu_moe": 8, "flash_attn": true,
-            "cache_type_k": "q8_0", "cache_type_v": "q8_0"},
-  "notes": "provisional: seeded 2026-07-14 from the verified ram-16 combo (flags identical - the extra RAM adds headroom for expert spill, not a reason to change a verified layout). Re-verify with `rigma bench` on the upgraded box.",
-  "sources": ["https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF"]
+ "model": "qwen3.6-35b-a3b",
+ "quant": "UD-Q3_K_XL",
+ "backend": "vulkan",
+ "flags": {
+  "ctx": 16384,
+  "ngl": 99,
+  "n_cpu_moe": 8,
+  "flash_attn": true,
+  "cache_type_k": "q8_0",
+  "cache_type_v": "q8_0",
+  "spec_type": "draft-mtp"
+ },
+ "notes": "provisional: seeded 2026-07-14 from the verified ram-16 combo (flags identical - the extra RAM adds headroom for expert spill, not a reason to change a verified layout). Re-verify with `rigma bench` on the upgraded box. spec_type=draft-mtp provisional (MTP-native family, reported ~1.17x; bench-verify).",
+ "sources": [
+  "https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF"
+ ]
 }
