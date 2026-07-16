@@ -8,10 +8,9 @@
   "n_cpu_moe": 8,
   "flash_attn": true,
   "cache_type_k": "q8_0",
-  "cache_type_v": "q8_0",
-  "spec_type": "draft-mtp"
+  "cache_type_v": "q8_0"
  },
- "notes": "provisional: seeded 2026-07-14 from the verified ram-16 combo (flags identical - the extra RAM adds headroom for expert spill, not a reason to change a verified layout). Re-verify with `rigma bench` on the upgraded box. spec_type=draft-mtp provisional (MTP-native family, reported ~1.17x; bench-verify).",
+ "notes": "provisional: seeded 2026-07-14 from the verified ram-16 combo (flags identical - the extra RAM adds headroom for expert spill, not a reason to change a verified layout). Re-verify with `rigma bench` on the upgraded box. draft-mtp REMOVED 2026-07-17: unsloth UD quants contain no MTP tensors - llama-server exits ('model doesn't contain MTP layers') and the retry loop reset the AMD Vulkan driver on the reference machine. MTP needs ggufs that ship the MTP heads.",
  "sources": [
   "https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF"
  ]
